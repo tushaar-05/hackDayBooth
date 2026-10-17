@@ -6,29 +6,29 @@ import { HelpCircle, ArrowLeft } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#172D24] text-[#F1F3EC]">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       <Header compact={true} />
 
       <main className="flex-1 max-w-xl w-full mx-auto px-4 py-20 flex flex-col items-center justify-center text-center">
-        <div className="w-16 h-16 rounded-2xl bg-[#234536] text-[#FF5757] flex items-center justify-center mb-5 border border-[#34604C] shadow-lg">
+        <div className="w-16 h-16 rounded-2xl bg-red-50 text-[#FF5757] flex items-center justify-center mb-5 border border-red-100 shadow-sm">
           <HelpCircle className="w-8 h-8" />
         </div>
 
-        <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#F5B041] bg-[#1E3B2F] px-3 py-1 rounded-full border border-[#2F5744] mb-3">
+        <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#FF5757] bg-red-50 px-3 py-1 rounded-full border border-red-200 mb-3">
           404 ERROR
         </span>
 
-        <h1 className="text-2xl sm:text-4xl font-extrabold text-white mb-3 font-display">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 mb-3 font-display">
           Organization Not Found
         </h1>
 
-        <p className="text-sm text-[#8BAEA0] max-w-sm mb-7 leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-sm mb-7 leading-relaxed">
           The requested organization or booth profile does not exist in the Hack Day directory.
         </p>
 
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#FF5757] hover:bg-[#FF6B6B] text-white text-sm font-bold transition-colors shadow-md"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-[#FF5757] text-white text-sm font-bold transition-colors shadow-md"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Booth Directory</span>

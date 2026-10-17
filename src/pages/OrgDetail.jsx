@@ -75,7 +75,7 @@ export default function OrgDetail() {
     : 'OS';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#172D24] text-[#F1F3EC]">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       {/* Header with compact navigation */}
       <Header compact={true} />
 
@@ -84,7 +84,7 @@ export default function OrgDetail() {
         <div className="mb-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#8FAFA1] hover:text-[#F5B041] active:text-[#FF5757] transition-colors group focus:outline-none focus:ring-2 focus:ring-[#F5B041] rounded-lg py-1 px-2 -ml-2"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#FF5757] active:text-[#E04848] transition-colors group focus:outline-none focus:ring-2 focus:ring-[#FF5757] rounded-lg py-1 px-2 -ml-2"
             aria-label="Back to booth directory"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -93,7 +93,7 @@ export default function OrgDetail() {
         </div>
 
         {/* Main Organization Hero Card */}
-        <div className="bg-[#1A3328] rounded-2xl border border-[#2B4E3E] shadow-md p-6 sm:p-8 mb-6 relative overflow-hidden">
+        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xs p-6 sm:p-8 mb-6 relative overflow-hidden">
           <div className="mosaic-bar absolute top-0 left-0 right-0">
             <span></span>
             <span></span>
@@ -104,7 +104,7 @@ export default function OrgDetail() {
 
           <div className="flex flex-col sm:flex-row sm:items-start gap-6 mt-1">
             {/* Org PNG Logo / Fallback Monogram */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white p-3 shrink-0 flex items-center justify-center overflow-hidden border border-white/20 shadow-sm">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-slate-50 border border-slate-200/80 p-3 shrink-0 flex items-center justify-center overflow-hidden">
               {org.logo && !imgError ? (
                 <img
                   src={org.logo}
@@ -114,7 +114,7 @@ export default function OrgDetail() {
                 />
               ) : (
                 <div
-                  className="w-full h-full rounded-xl bg-[#FF5757]/20 text-[#FF5757] font-extrabold text-2xl flex items-center justify-center select-none font-mono"
+                  className="w-full h-full rounded-xl bg-orange-50 text-[#FF5757] font-extrabold text-2xl flex items-center justify-center select-none font-mono"
                   aria-label={`${org.name} monogram`}
                 >
                   {initials}
@@ -125,25 +125,25 @@ export default function OrgDetail() {
             {/* Name, Tagline, and Location */}
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 mb-2">
-                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-[#234536] text-[#F5B041] border border-[#34604C]">
+                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-orange-50 text-[#FF5757] border border-orange-200">
                   Official Open Source Booth
                 </span>
                 {hasBoothLocation && (
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-md bg-[#13251D] text-[#CDE0D6] border border-[#264A39]">
-                    <MapPin className="w-3.5 h-3.5 text-[#FF7675]" />
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
+                    <MapPin className="w-3.5 h-3.5 text-[#FF5757]" />
                     {hasFloor && <span>{org.booth_location.floor}</span>}
-                    {hasFloor && hasLandmark && <span className="text-[#648475]">•</span>}
+                    {hasFloor && hasLandmark && <span className="text-slate-400">•</span>}
                     {hasLandmark && <span>{org.booth_location.landmark}</span>}
                   </span>
                 )}
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
+              <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
                 {org.name}
               </h1>
 
               {org.tagline && (
-                <p className="mt-2.5 text-sm sm:text-base text-[#9DBBB0] leading-relaxed">
+                <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
                   {org.tagline}
                 </p>
               )}
@@ -153,12 +153,12 @@ export default function OrgDetail() {
 
         {/* What the Project Does (Beginner-friendly explanation) */}
         {hasWhatItIs && (
-          <section className="bg-[#1A3328] rounded-2xl border border-[#2B4E3E] shadow-sm p-6 sm:p-7 mb-6">
-            <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2.5 mb-3 font-display">
+          <section className="bg-white rounded-2xl border border-slate-200/90 shadow-xs p-6 sm:p-7 mb-6">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-3 font-display">
               <Sparkles className="w-5 h-5 text-[#F5B041]" />
               <span>About the Project</span>
             </h2>
-            <div className="space-y-2.5 text-sm sm:text-base text-[#B0C8BC] leading-relaxed">
+            <div className="space-y-2.5 text-sm sm:text-base text-slate-700 leading-relaxed">
               {whatItIsLines.map((line, idx) => (
                 <p key={idx}>{line}</p>
               ))}
@@ -168,12 +168,12 @@ export default function OrgDetail() {
 
         {/* How to Contribute Section */}
         {hasContributions && (
-          <section className="bg-[#1A3328] rounded-2xl border border-[#2B4E3E] shadow-sm p-6 sm:p-7 mb-6">
-            <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2.5 mb-2 font-display">
-              <GitPullRequest className="w-5 h-5 text-[#55EFC4]" />
+          <section className="bg-white rounded-2xl border border-slate-200/90 shadow-xs p-6 sm:p-7 mb-6">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2 font-display">
+              <GitPullRequest className="w-5 h-5 text-emerald-600" />
               <span>How to Contribute</span>
             </h2>
-            <p className="text-xs sm:text-sm text-[#8BAEA0] mb-4">
+            <p className="text-xs sm:text-sm text-slate-500 mb-4">
               Beginner-friendly opportunities recommended for Hack Day participants:
             </p>
 
@@ -181,10 +181,10 @@ export default function OrgDetail() {
               {validContributions.map((idea, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-3 p-3.5 rounded-xl bg-[#142820] border border-[#254637]"
+                  className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/70"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#55EFC4] shrink-0 mt-0.5" />
-                  <span className="text-sm font-medium text-[#D9E6DF] leading-snug">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-sm font-medium text-slate-800 leading-snug">
                     {idea}
                   </span>
                 </li>
@@ -195,8 +195,8 @@ export default function OrgDetail() {
 
         {/* Contribution Links & Action Center */}
         {hasResourceLinks && (
-          <section className="bg-[#1A3328] rounded-2xl border border-[#2B4E3E] shadow-sm p-6 sm:p-7 mb-6">
-            <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2.5 mb-4 font-display">
+          <section className="bg-white rounded-2xl border border-slate-200/90 shadow-xs p-6 sm:p-7 mb-6">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-4 font-display">
               <BookOpen className="w-5 h-5 text-[#FF5757]" />
               <span>Get Started &amp; Issues</span>
             </h2>
@@ -207,20 +207,20 @@ export default function OrgDetail() {
                   href={org.beginner_issues_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-[#244536] to-[#1F3D30] border border-[#34604C] hover:border-[#F5B041] text-white font-semibold text-sm transition-all shadow-xs group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-orange-50/50 hover:bg-orange-50 border border-orange-200 text-slate-900 font-semibold text-sm transition-all shadow-xs group"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-lg bg-[#FF5757] text-white flex items-center justify-center shrink-0">
                       <GitPullRequest className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white group-hover:text-[#F5B041] transition-colors">
+                      <div className="font-bold text-slate-900 group-hover:text-[#FF5757] transition-colors">
                         Good First Issues
                       </div>
-                      <div className="text-xs text-[#8BAEA0]">Curated beginner tasks</div>
+                      <div className="text-xs text-slate-500">Curated beginner tasks</div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-[#7B9E8E] group-hover:text-[#F5B041] group-hover:translate-x-0.5 transition-transform" />
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#FF5757] group-hover:translate-x-0.5 transition-transform" />
                 </a>
               )}
 
@@ -229,20 +229,20 @@ export default function OrgDetail() {
                   href={org.contributing_guide_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-4 rounded-xl bg-[#142820] border border-[#254637] hover:border-[#38644F] text-white font-semibold text-sm transition-all shadow-xs group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 font-semibold text-sm transition-all shadow-xs group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#244536] text-[#F5B041] flex items-center justify-center shrink-0 border border-[#34604C]">
+                    <div className="w-9 h-9 rounded-lg bg-slate-900 text-[#F5B041] flex items-center justify-center shrink-0">
                       <BookOpen className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white group-hover:text-[#F5B041] transition-colors">
+                      <div className="font-bold text-slate-900 group-hover:text-[#FF5757] transition-colors">
                         Contributing Guide
                       </div>
-                      <div className="text-xs text-[#8BAEA0]">Setup &amp; guidelines</div>
+                      <div className="text-xs text-slate-500">Setup &amp; guidelines</div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-[#7B9E8E] group-hover:text-[#F5B041] group-hover:translate-x-0.5 transition-transform" />
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#FF5757] group-hover:translate-x-0.5 transition-transform" />
                 </a>
               )}
             </div>
@@ -251,9 +251,9 @@ export default function OrgDetail() {
 
         {/* Community & Official Channels */}
         {hasCommunity && (
-          <section className="bg-[#1A3328] rounded-2xl border border-[#2B4E3E] shadow-sm p-6 sm:p-7 mb-8">
-            <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2.5 mb-4 font-display">
-              <Globe className="w-5 h-5 text-[#4D96FF]" />
+          <section className="bg-white rounded-2xl border border-slate-200/90 shadow-xs p-6 sm:p-7 mb-8">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-4 font-display">
+              <Globe className="w-5 h-5 text-blue-600" />
               <span>Community &amp; Official Channels</span>
             </h2>
 
@@ -263,11 +263,11 @@ export default function OrgDetail() {
                   href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#12231C] hover:bg-[#1E3B2E] text-white border border-[#2E5241] text-xs sm:text-sm font-semibold transition-colors shadow-xs"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors shadow-xs"
                 >
                   <GithubIcon className="w-4 h-4 text-white" />
                   <span>GitHub Repository</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#7B9E8E] ml-1" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 ml-1" />
                 </a>
               )}
 
@@ -276,11 +276,11 @@ export default function OrgDetail() {
                   href={chatUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1D354E] hover:bg-[#254668] text-[#93C5FD] border border-[#305980] text-xs sm:text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 text-xs sm:text-sm font-semibold transition-colors"
                 >
-                  <MessageSquare className="w-4 h-4 text-[#60A5FA]" />
+                  <MessageSquare className="w-4 h-4 text-blue-600" />
                   <span>Discussion &amp; Chat</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#93C5FD] ml-1" />
+                  <ExternalLink className="w-3.5 h-3.5 text-blue-500 ml-1" />
                 </a>
               )}
 
@@ -289,11 +289,11 @@ export default function OrgDetail() {
                   href={websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#142820] hover:bg-[#1D3B2F] text-[#D8E6DF] border border-[#254637] text-xs sm:text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 text-xs sm:text-sm font-semibold transition-colors"
                 >
-                  <Globe className="w-4 h-4 text-[#8BAEA0]" />
+                  <Globe className="w-4 h-4 text-slate-600" />
                   <span>Official Website</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#7B9E8E] ml-1" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 ml-1" />
                 </a>
               )}
             </div>
@@ -304,7 +304,7 @@ export default function OrgDetail() {
         <div className="pt-2 pb-6 text-center">
           <Link
             to="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#234536] hover:bg-[#2B5442] text-white text-sm font-bold transition-colors border border-[#34604C]"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-900 text-sm font-bold transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Organizations</span>

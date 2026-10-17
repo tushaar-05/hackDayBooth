@@ -21,14 +21,14 @@ export default function OrgCard({ org }) {
     : 'OS';
 
   return (
-    <article className="group bg-[#1A3328] hover:bg-[#1E3B2F] rounded-2xl border border-[#2B4E3E] hover:border-[#F5B041] p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between relative overflow-hidden shadow-md">
+    <article className="group bg-white rounded-2xl border border-slate-200/90 hover:border-[#FF5757] p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between relative overflow-hidden card-shadow">
       {/* Top subtle pixel accent line on hover */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FF5757] via-[#F5B041] to-[#55EFC4] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#4D96FF] via-[#FF5757] to-[#F5B041] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
       <div>
-        {/* Header: PNG Logo & Name */}
-        <div className="flex items-start gap-4 mb-3.5">
-          <div className="w-14 h-14 rounded-xl bg-white p-2 shrink-0 flex items-center justify-center overflow-hidden border border-white/20 shadow-xs">
+        {/* Header: Official PNG Logo & Name */}
+        <div className="flex items-start gap-3.5 mb-3.5">
+          <div className="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200/80 p-2 shrink-0 flex items-center justify-center overflow-hidden group-hover:border-slate-300 transition-colors">
             {org.logo && !imgError ? (
               <img
                 src={org.logo}
@@ -39,7 +39,7 @@ export default function OrgCard({ org }) {
               />
             ) : (
               <div
-                className="w-full h-full rounded-lg bg-[#FF5757]/20 text-[#FF7675] font-extrabold text-sm flex items-center justify-center select-none font-mono"
+                className="w-full h-full rounded-lg bg-orange-50 text-orange-600 font-extrabold text-sm flex items-center justify-center select-none font-mono"
                 aria-label={`${org.name} monogram`}
               >
                 {initials}
@@ -48,29 +48,29 @@ export default function OrgCard({ org }) {
           </div>
 
           <div className="min-w-0 flex-1">
-            <h2 className="text-lg font-bold text-white group-hover:text-[#F5B041] transition-colors truncate font-display">
+            <h2 className="text-lg font-bold text-slate-900 group-hover:text-[#FF5757] transition-colors truncate font-display">
               {org.name}
             </h2>
-            <span className="inline-flex items-center text-[10px] font-mono font-bold text-[#8FAFA1] uppercase tracking-wider">
+            <span className="inline-flex items-center text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">
               Open Source Booth
             </span>
           </div>
         </div>
 
         {/* Short one-line description */}
-        <p className="text-sm text-[#A9C4B7] line-clamp-2 leading-relaxed mb-4">
+        <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed mb-4">
           {org.tagline}
         </p>
       </div>
 
       {/* Footer Area: Booth Location (if provided) & Action Link */}
-      <div className="pt-3 border-t border-[#264839] flex flex-col gap-3">
+      <div className="pt-3 border-t border-slate-100 flex flex-col gap-3">
         {hasBoothLocation && (
-          <div className="flex items-center gap-2 text-xs font-medium text-[#CDE0D6] bg-[#142820] px-3 py-1.5 rounded-lg border border-[#2B4E3E]">
-            <MapPin className="w-3.5 h-3.5 text-[#FF7675] shrink-0" />
+          <div className="flex items-center gap-2 text-xs font-medium text-slate-700 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/70">
+            <MapPin className="w-3.5 h-3.5 text-[#FF5757] shrink-0" />
             <span className="truncate">
               {hasFloor && <span>{org.booth_location.floor}</span>}
-              {hasFloor && hasLandmark && <span className="text-[#6C8E7E] mx-1">•</span>}
+              {hasFloor && hasLandmark && <span className="text-slate-400 mx-1">•</span>}
               {hasLandmark && <span>{org.booth_location.landmark}</span>}
             </span>
           </div>
@@ -79,7 +79,7 @@ export default function OrgCard({ org }) {
         {/* Explore Project Button */}
         <Link
           to={`/org/${org.id}`}
-          className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-[#234536] hover:bg-[#FF5757] active:bg-[#E04848] text-white text-sm font-semibold transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#FF5757] focus:ring-offset-2 focus:ring-offset-[#172D24] min-h-[44px] shadow-xs group-hover:bg-[#FF5757]"
+          className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-[#FF5757] active:bg-[#E04848] text-white text-sm font-semibold transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#FF5757] focus:ring-offset-2 min-h-[44px] shadow-xs group-hover:bg-[#FF5757]"
           aria-label={`Explore ${org.name} project details`}
         >
           <span className="font-medium">Explore Project</span>
