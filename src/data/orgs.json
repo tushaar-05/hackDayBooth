@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "OpenMRS",
-      "logo": "/images/openmrs.svg",
+      "logo": "/images/openmrs.png",
       "tagline": "Open-source electronic medical record platform empowering healthcare in resource-constrained environments.",
       "what_it_is": "OpenMRS is an enterprise electronic medical records system designed to support clinics and hospitals worldwide.\nIt allows healthcare providers to track patient histories, manage clinical visits, and scale primary care delivery.",
       "how_to_contribute": [
@@ -26,7 +26,7 @@
     {
       "id": "2",
       "name": "Oppia",
-      "logo": "/images/oppia.svg",
+      "logo": "/images/oppia.png",
       "tagline": "Free, interactive learning platform making high-quality education accessible to every student.",
       "what_it_is": "Oppia builds engaging interactive lessons that simulate personal tutoring through real-time feedback.\nIt bridges educational disparities by enabling learners around the world to master math, science, and foundational concepts.",
       "how_to_contribute": [
@@ -49,7 +49,7 @@
     {
       "id": "3",
       "name": "Sugar Labs",
-      "logo": "/images/sugarlabs.svg",
+      "logo": "/images/sugarlabs.png",
       "tagline": "Exploratory learning tools and interactive software ecosystem designed for children.",
       "what_it_is": "Sugar Labs develops the Sugar learning platform that encourages collaboration, discovery, and creative reflection.\nOriginally created for One Laptop per Child, it runs on computers and tablets to help students explore coding and media.",
       "how_to_contribute": [
@@ -72,7 +72,7 @@
     {
       "id": "4",
       "name": "Kubernetes",
-      "logo": "/images/kubernetes.svg",
+      "logo": "/images/kubernetes.png",
       "tagline": "Industry-standard open-source system for automating deployment, scaling, and container management.",
       "what_it_is": "Kubernetes is an open-source container orchestration engine that groups application containers into logical units.\nIt automates service discovery, load balancing, storage orchestration, and automated rollouts across cloud infrastructure.",
       "how_to_contribute": [
@@ -95,7 +95,7 @@
     {
       "id": "5",
       "name": "Meshery",
-      "logo": "/images/meshery.svg",
+      "logo": "/images/meshery.png",
       "tagline": "Cloud native management plane and collaborative design canvas for Kubernetes infrastructure.",
       "what_it_is": "Meshery is an extensible open-source manager that allows operators to design, operate, and benchmark cloud-native systems.\nIt enables visual architecture topology design, multi-mesh operations, and conformance with industry best practices.",
       "how_to_contribute": [
@@ -118,7 +118,7 @@
     {
       "id": "6",
       "name": "JSON Schema",
-      "logo": "/images/jsonschema.svg",
+      "logo": "/images/jsonschema.png",
       "tagline": "Declarative standard for annotating, validating, and structuring JSON documents and APIs.",
       "what_it_is": "JSON Schema provides a clean, standardized vocabulary to validate data structures and prevent API bugs.\nIt powers API specifications, code generation, and automated documentation across modern software stacks.",
       "how_to_contribute": [
@@ -141,7 +141,7 @@
     {
       "id": "7",
       "name": "FOSSASIA",
-      "logo": "/images/fossasia.svg",
+      "logo": "/images/fossasia.png",
       "tagline": "Fostering open-source technology, software, and open hardware across Asia and the globe.",
       "what_it_is": "FOSSASIA develops open technology solutions ranging from event management systems to pocket science instruments.\nIt brings together students, developers, and educators to create open tools that make an impact in communities.",
       "how_to_contribute": [

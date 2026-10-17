@@ -1,16 +1,39 @@
-# React + Vite
+# Hacktoberfest Hack Day 2026 - Open Source Booth Directory
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Official mobile-first Open Source Booth Directory website for **Hacktoberfest Hack Day 2026**, organized by **NSTSDC** at **Newton School of Technology x Ajeenkya D Y Patil University (NST x ADYPU), Pune**.
 
-Currently, two official plugins are available:
+## Event Overview
+- **Event**: Hacktoberfest Hack Day 2026
+- **Organizer**: NSTSDC (Newton School of Technology Software Development Club)
+- **Partners**: Major League Hacking (MLH), Newton School of Technology, Ajeenkya D Y Patil University
+- **Booth Timings**: 11:00 AM – 4:00 PM, Saturday, 24 October 2026
+- **Overnight Hackathon**: 4:00 PM 24 Oct – 4:00 AM 25 Oct (12 Hours)
+- **Venue**: Newton School of Technology, ADYPU Campus, Lohegaon, Pune, Maharashtra 412105, India
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- **React 19** with **Vite**
+- **Tailwind CSS v4** (with `@tailwindcss/vite`)
+- **React Router v7**
+- **Lucide React**
+- **Real PNG Images** for all organizations and institutional partners
 
-## React Compiler
+## Featured Open Source Booths
+1. **OpenMRS**
+2. **Oppia**
+3. **Sugar Labs**
+4. **Kubernetes**
+5. **Meshery**
+6. **JSON Schema**
+7. **FOSSASIA**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Running Locally
+```bash
+# Install dependencies
+pnpm install
 
-## Expanding the Oxlint configuration
+# Start development server
+pnpm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# Build for production
+pnpm run build
+```
