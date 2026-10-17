@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <circle cx="50" cy="50" r="48" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
-  <!-- OpenMRS Cross / Ribbon Motif -->
-  <path d="M50 18 C58 18 64 24 64 32 C64 40 50 48 50 48 C50 48 36 40 36 32 C36 24 42 18 50 18 Z" fill="#F26522"/>
-  <path d="M82 50 C82 58 76 64 68 64 C60 64 52 50 52 50 C52 50 60 36 68 36 C76 36 82 42 82 50 Z" fill="#5B8F22"/>
-  <path d="M50 82 C42 82 36 76 36 68 C36 60 50 52 50 52 C50 52 64 60 64 68 C64 76 58 82 50 82 Z" fill="#00A389"/>
-  <path d="M18 50 C18 42 24 36 32 36 C40 36 48 50 48 50 C48 50 40 64 32 64 C24 64 18 58 18 50 Z" fill="#007991"/>
-  <circle cx="50" cy="50" r="8" fill="#FFFFFF"/>
-</svg>
