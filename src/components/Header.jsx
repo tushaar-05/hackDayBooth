@@ -38,19 +38,13 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
             />
           </div>
 
-          {/* Right: Club Logo & Back Button */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Right: Club Logo */}
+          <div className="flex items-center shrink-0">
             <img
               src="/images/devClub.png"
               alt="Developers Club"
               className="h-6 sm:h-7 object-contain"
             />
-            <Link
-              to="/"
-              className="brutal-btn px-2.5 sm:px-4 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs uppercase tracking-wider"
-            >
-              ← Booths
-            </Link>
           </div>
         </div>
       </header>
@@ -90,19 +84,13 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
             />
           </div>
 
-          {/* Right: Developers Club Logo & Action Button */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Right: Developers Club Logo */}
+          <div className="flex items-center shrink-0">
             <img
               src="/images/devClub.png"
               alt="Developers Club Logo"
               className="h-6 sm:h-8 object-contain"
             />
-            <a
-              href="#directory"
-              className="brutal-btn px-2.5 sm:px-4 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs uppercase tracking-wider hidden sm:inline-block"
-            >
-              View Booths
-            </a>
           </div>
 
         </div>

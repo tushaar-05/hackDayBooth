@@ -15,11 +15,14 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <span className="text-[10px] text-slate-500 uppercase">POWERED BY</span>
-              <img src="/images/mlh.png" alt="MLH" className="h-6 object-contain" />
-              <span>x</span>
-              <img src="/images/devClub.png" alt="Developers Club" className="h-6 object-contain" />
+              <img src="/images/mlh.png" alt="MLH" className="h-6 sm:h-7 object-contain" />
+              <span className="text-slate-400 font-bold">x</span>
+              <div className="bg-[#10201d] px-2.5 py-1 rounded-md border-2 border-[#10201d] brutal-shadow-sm flex items-center gap-1.5">
+                <img src="/images/devClub.png" alt="Developers Club" className="h-5 sm:h-6 object-contain" />
+                <span className="text-white text-xs font-mono font-bold tracking-tight">DevClub</span>
+              </div>
             </div>
 
             <div className="hidden lg:block h-4 w-px bg-slate-300"></div>
@@ -40,9 +43,9 @@ export default function Footer() {
       <div className="bg-[#2e4742] text-[#f7f7f2] py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-[#3d5f58]">
-            {/* Col 1 */}
-            <div className="md:col-span-2">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 pb-10 border-b border-[#3d5f58]">
+            {/* Event Description */}
+            <div className="max-w-xl">
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-display text-2xl font-extrabold text-white uppercase">
                   OPEN SOURCE BOOTHS
@@ -56,33 +59,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Col 2 */}
-            <div>
-              <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-3">
-                Quick Navigation
-              </h4>
-              <ul className="space-y-2 text-xs text-[#cfdeda]">
-                <li>
-                  <a href="#directory" className="hover:text-[#f18379] transition-colors">
-                    ▸ 7 Featured Booths
-                  </a>
-                </li>
-                <li>
-                  <a href="#directory" className="hover:text-[#f18379] transition-colors">
-                    ▸ Good First Issues
-                  </a>
-                </li>
-                <li>
-                  <span className="text-[#88baaf]">▸ 12-Hour Overnight Hackathon</span>
-                </li>
-                <li>
-                  <span className="text-[#88baaf]">▸ Contributor Swag</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 3 */}
-            <div>
+            {/* Venue & Location */}
+            <div className="shrink-0">
               <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-3">
                 Venue &amp; Location
               </h4>

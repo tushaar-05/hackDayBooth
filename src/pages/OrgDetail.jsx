@@ -155,10 +155,25 @@ export default function OrgDetail() {
         {/* What the Project Does */}
         {hasWhatItIs && (
           <section className="bg-white rounded-lg border-2 border-[#10201d] brutal-shadow p-6 sm:p-7 mb-6">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-[#10201d] flex items-center gap-2.5 mb-3 font-display">
-              <Sparkles className="w-5 h-5 text-[#f2a900]" />
-              <span>About the Project</span>
-            </h2>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b-2 border-[#10201d]/10">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-[#10201d] flex items-center gap-2.5 font-display">
+                <Sparkles className="w-5 h-5 text-[#f2a900]" />
+                <span>About the Project</span>
+              </h2>
+
+              {(websiteUrl || githubUrl) && (
+                <a
+                  href={websiteUrl || githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="brutal-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded text-xs uppercase tracking-wider self-start sm:self-auto"
+                >
+                  <span>Learn More</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+            </div>
+
             <div className="space-y-2.5 text-sm sm:text-base text-[#34433f] leading-relaxed">
               {whatItIsLines.map((line, idx) => (
                 <p key={idx}>{line}</p>
@@ -199,10 +214,15 @@ export default function OrgDetail() {
         {/* Contribution Links & Action Center */}
         {hasResourceLinks && (
           <section className="bg-white rounded-lg border-2 border-[#10201d] brutal-shadow p-6 sm:p-7 mb-6">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-[#10201d] flex items-center gap-2.5 mb-5 font-display">
-              <BookOpen className="w-5 h-5 text-[#e53927]" />
-              <span>Get Started &amp; Issues</span>
-            </h2>
+            <div className="flex items-center justify-between gap-3 mb-5 pb-3 border-b-2 border-[#10201d]/10">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-[#10201d] flex items-center gap-2.5 font-display">
+                <BookOpen className="w-5 h-5 text-[#e53927]" />
+                <span>Get Started &amp; Issues</span>
+              </h2>
+              <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider hidden sm:inline-block">
+                Start Contributing
+              </span>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {hasBeginnerIssues && (
@@ -210,18 +230,30 @@ export default function OrgDetail() {
                   href={org.beginner_issues_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-4 rounded bg-[#e97b77] hover:bg-[#f08985] text-[#10201d] font-bold text-sm border-2 border-[#10201d] brutal-shadow-sm transition-all group"
+                  className="group flex flex-col justify-between p-5 rounded-lg bg-[#fff5f5] hover:bg-[#ffebeb] border-2 border-[#10201d] brutal-shadow-sm hover:-translate-y-1 hover:shadow-[5px_5px_0_#10201d] transition-all duration-150"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded bg-[#10201d] text-white flex items-center justify-center shrink-0">
-                      <GitPullRequest className="w-4 h-4" />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-10 h-10 rounded-md bg-[#e97b77] text-[#10201d] border-2 border-[#10201d] flex items-center justify-center font-bold">
+                        <GitPullRequest className="w-5 h-5" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#f1c40f] text-[#10201d] border border-[#10201d]">
+                        Recommended
+                      </span>
                     </div>
-                    <div>
-                      <div className="font-extrabold uppercase font-mono text-xs">Good First Issues</div>
-                      <div className="text-[11px] opacity-80 font-normal">Curated beginner tasks</div>
-                    </div>
+
+                    <h3 className="font-extrabold text-base sm:text-lg text-[#10201d] font-display">
+                      Good First Issues
+                    </h3>
+                    <p className="text-xs text-[#34433f] mt-1.5 leading-relaxed">
+                      Curated beginner-friendly tasks with mentor support, ideal for first-time PRs.
+                    </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+
+                  <div className="mt-4 pt-3 border-t border-[#10201d]/15 flex items-center justify-between text-xs font-mono font-bold text-[#10201d] uppercase tracking-wider">
+                    <span className="group-hover:text-[#e53927] transition-colors">Browse Issues</span>
+                    <ExternalLink className="w-4 h-4 text-[#10201d] group-hover:translate-x-1 group-hover:text-[#e53927] transition-all" />
+                  </div>
                 </a>
               )}
 
@@ -230,18 +262,30 @@ export default function OrgDetail() {
                   href={org.contributing_guide_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-4 rounded bg-[#f7f7f2] hover:bg-white text-[#10201d] font-bold text-sm border-2 border-[#10201d] brutal-shadow-sm transition-all group"
+                  className="group flex flex-col justify-between p-5 rounded-lg bg-[#f7f7f2] hover:bg-[#f0f4f2] border-2 border-[#10201d] brutal-shadow-sm hover:-translate-y-1 hover:shadow-[5px_5px_0_#10201d] transition-all duration-150"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded bg-[#3d5f58] text-white flex items-center justify-center shrink-0 border border-[#10201d]">
-                      <BookOpen className="w-4 h-4" />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-10 h-10 rounded-md bg-[#36544e] text-white border-2 border-[#10201d] flex items-center justify-center font-bold">
+                        <BookOpen className="w-5 h-5" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white text-[#10201d] border border-[#10201d]">
+                        Setup Guide
+                      </span>
                     </div>
-                    <div>
-                      <div className="font-extrabold uppercase font-mono text-xs">Contributing Guide</div>
-                      <div className="text-[11px] text-slate-500 font-normal">Setup &amp; guidelines</div>
-                    </div>
+
+                    <h3 className="font-extrabold text-base sm:text-lg text-[#10201d] font-display">
+                      Contributing Guide
+                    </h3>
+                    <p className="text-xs text-[#34433f] mt-1.5 leading-relaxed">
+                      Step-by-step developer setup, code formatting standards, and PR submission rules.
+                    </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-600 group-hover:translate-x-0.5 transition-transform" />
+
+                  <div className="mt-4 pt-3 border-t border-[#10201d]/15 flex items-center justify-between text-xs font-mono font-bold text-[#10201d] uppercase tracking-wider">
+                    <span className="group-hover:text-[#36544e] transition-colors">Read Guidelines</span>
+                    <ExternalLink className="w-4 h-4 text-[#10201d] group-hover:translate-x-1 group-hover:text-[#36544e] transition-all" />
+                  </div>
                 </a>
               )}
             </div>
@@ -251,22 +295,43 @@ export default function OrgDetail() {
         {/* Community & Official Channels */}
         {hasCommunity && (
           <section className="bg-white rounded-lg border-2 border-[#10201d] brutal-shadow p-6 sm:p-7 mb-8">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-[#10201d] flex items-center gap-2.5 mb-5 font-display">
-              <Globe className="w-5 h-5 text-[#3d5f58]" />
-              <span>Community &amp; Official Channels</span>
-            </h2>
+            <div className="flex items-center justify-between gap-3 mb-5 pb-3 border-b-2 border-[#10201d]/10">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-[#10201d] flex items-center gap-2.5 font-display">
+                <Globe className="w-5 h-5 text-[#3d5f58]" />
+                <span>Community &amp; Official Channels</span>
+              </h2>
+              <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider hidden sm:inline-block">
+                Stay Connected
+              </span>
+            </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
               {githubUrl && (
                 <a
                   href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-[#10201d] text-white border-2 border-[#10201d] text-xs font-mono font-bold hover:bg-[#253e39] transition-colors brutal-shadow-sm"
+                  className="group flex flex-col justify-between p-4 rounded-lg bg-[#10201d] text-white border-2 border-[#10201d] brutal-shadow-sm hover:-translate-y-1 hover:shadow-[4px_4px_0_#36544e] transition-all duration-150"
                 >
-                  <GithubIcon className="w-4 h-4 text-white" />
-                  <span>GitHub Repository</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-1 opacity-70" />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center border border-white/20">
+                        <GithubIcon className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/15 text-white/90 border border-white/20">
+                        Codebase
+                      </span>
+                    </div>
+                    <div className="font-bold font-mono text-sm text-white">GitHub Repository</div>
+                    <p className="text-[11px] text-white/70 mt-1 leading-snug">
+                      Star, fork, and inspect the codebase.
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-white/90">
+                    <span>Open Repo</span>
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
                 </a>
               )}
 
@@ -275,11 +340,27 @@ export default function OrgDetail() {
                   href={chatUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-white text-[#10201d] border-2 border-[#10201d] text-xs font-mono font-bold hover:bg-[#f7f7f2] transition-colors brutal-shadow-sm"
+                  className="group flex flex-col justify-between p-4 rounded-lg bg-[#fdfbf7] hover:bg-[#fff9e6] text-[#10201d] border-2 border-[#10201d] brutal-shadow-sm hover:-translate-y-1 hover:shadow-[4px_4px_0_#10201d] transition-all duration-150"
                 >
-                  <MessageSquare className="w-4 h-4 text-[#3d5f58]" />
-                  <span>Discussion &amp; Chat</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-1 opacity-70" />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-8 h-8 rounded bg-[#f1c40f] text-[#10201d] flex items-center justify-center border border-[#10201d]">
+                        <MessageSquare className="w-4 h-4" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white text-[#10201d] border border-[#10201d]">
+                        Chat &amp; Forum
+                      </span>
+                    </div>
+                    <div className="font-bold font-mono text-sm text-[#10201d]">Discussion &amp; Chat</div>
+                    <p className="text-[11px] text-[#34433f] mt-1 leading-snug">
+                      Connect with mentors &amp; the community.
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-2.5 border-t border-[#10201d]/15 flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-[#10201d]">
+                    <span className="group-hover:text-[#e53927] transition-colors">Join Chat</span>
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
                 </a>
               )}
 
@@ -288,22 +369,38 @@ export default function OrgDetail() {
                   href={websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-white text-[#10201d] border-2 border-[#10201d] text-xs font-mono font-bold hover:bg-[#f7f7f2] transition-colors brutal-shadow-sm"
+                  className="group flex flex-col justify-between p-4 rounded-lg bg-[#fdfbf7] hover:bg-[#f0f4f2] text-[#10201d] border-2 border-[#10201d] brutal-shadow-sm hover:-translate-y-1 hover:shadow-[4px_4px_0_#10201d] transition-all duration-150"
                 >
-                  <Globe className="w-4 h-4 text-[#3d5f58]" />
-                  <span>Official Website</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-1 opacity-70" />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-8 h-8 rounded bg-[#36544e] text-white flex items-center justify-center border border-[#10201d]">
+                        <Globe className="w-4 h-4" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white text-[#10201d] border border-[#10201d]">
+                        Portal
+                      </span>
+                    </div>
+                    <div className="font-bold font-mono text-sm text-[#10201d]">Official Website</div>
+                    <p className="text-[11px] text-[#34433f] mt-1 leading-snug">
+                      Project documentation and announcements.
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-2.5 border-t border-[#10201d]/15 flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-[#10201d]">
+                    <span className="group-hover:text-[#36544e] transition-colors">Visit Site</span>
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
                 </a>
               )}
             </div>
           </section>
         )}
 
-        {/* Bottom Back Button */}
-        <div className="pt-2 pb-6 text-center">
+        {/* Bottom Navigation & Action Bar */}
+        <div className="pt-4 pb-8 flex items-center justify-center border-t-2 border-[#10201d]/10 mt-2">
           <Link
             to="/"
-            className="brutal-btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded text-xs uppercase tracking-wider"
+            className="w-full sm:w-auto brutal-btn inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded text-xs font-mono font-bold uppercase tracking-wider text-center"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Booths</span>
