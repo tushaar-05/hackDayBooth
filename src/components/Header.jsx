@@ -39,12 +39,15 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
           </div>
 
           {/* Right: Club Logo */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <img
               src="/images/devClub.png"
-              alt="Developers Club"
+              alt="NST-SDC Developers Club"
               className="h-6 sm:h-7 object-contain"
             />
+            <span className="text-[11px] sm:text-xs font-mono font-bold tracking-wider text-[#f7f7f2]">
+              NST-SDC
+            </span>
           </div>
         </div>
       </header>
@@ -85,12 +88,15 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
           </div>
 
           {/* Right: Developers Club Logo */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <img
               src="/images/devClub.png"
-              alt="Developers Club Logo"
+              alt="NST-SDC Developers Club"
               className="h-6 sm:h-8 object-contain"
             />
+            <span className="text-[11px] sm:text-xs font-mono font-bold tracking-wider text-[#f7f7f2]">
+              NST-SDC
+            </span>
           </div>
 
         </div>
