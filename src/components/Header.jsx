@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, Calendar, Terminal, Sparkles, ChevronRight, Layers } from 'lucide-react';
+import { MapPin, Clock, Calendar, Search, ArrowRight, ExternalLink } from 'lucide-react';
 
-export default function Header({ compact = false }) {
+export default function Header({ compact = false, onSearchChange, searchQuery = '' }) {
   if (compact) {
     return (
-      <header className="sticky top-0 z-40 bg-[#14261F]/95 backdrop-blur-md border-b border-[#254637] shadow-lg">
+      <header className="sticky top-0 z-40 bg-[#36544e] border-b-2 border-[#10201d]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <Link
             to="/"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#FF5757] rounded-xl p-1"
+            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#e97b77] rounded-md"
             aria-label="Back to Hack Day Booth Directory"
           >
-            {/* White pill with NST & ADYPU Logos */}
-            <div className="bg-white/95 px-2.5 py-1 rounded-lg border border-white/20 flex items-center gap-2 shadow-xs group-hover:bg-white transition-colors">
+            {/* White pill with NST & ADYPU Logos and black border */}
+            <div className="bg-[#f7f7f2] px-3 py-1.5 rounded-md border-2 border-[#10201d] brutal-shadow-sm flex items-center gap-2.5">
               <img
                 src="/images/nstLogo.png"
                 alt="Newton School of Technology"
                 className="h-5 sm:h-6 object-contain"
               />
-              <span className="w-px h-4 bg-slate-300"></span>
+              <span className="w-px h-4 bg-[#10201d]"></span>
               <img
                 src="/images/adypuLogo.png"
                 alt="Ajeenkya DY Patil University"
@@ -27,15 +27,13 @@ export default function Header({ compact = false }) {
               />
             </div>
 
-            <div className="hidden sm:block border-l border-[#2E5241] pl-3">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#FF7675]">
-                  NSTSDC
-                </span>
-                <span className="text-[10px] text-[#7A988B]">•</span>
-                <span className="text-[10px] text-[#A5C2B4]">Hacktoberfest 2026</span>
-              </div>
-              <p className="text-xs font-bold text-[#F3F4EE] leading-tight">Booth Directory</p>
+            <div className="hidden sm:block">
+              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#f7f7f2] block">
+                NSTSDC • HACKTOBERFEST 2026
+              </span>
+              <span className="text-sm font-display font-extrabold text-white tracking-tight">
+                Booth Directory
+              </span>
             </div>
           </Link>
 
@@ -43,13 +41,13 @@ export default function Header({ compact = false }) {
             <img
               src="/images/mlh-logo.png"
               alt="Major League Hacking"
-              className="h-6 object-contain hidden md:block opacity-90"
+              className="h-6 object-contain hidden md:block"
             />
             <Link
               to="/"
-              className="text-xs font-bold text-[#F3F4EE] hover:text-white bg-[#203D31] hover:bg-[#2B5040] active:bg-[#1C362B] px-3.5 py-2 rounded-lg transition-colors border border-[#345B47] flex items-center gap-1.5"
+              className="brutal-btn px-4 py-2 rounded-md text-xs uppercase tracking-wider"
             >
-              <span>← All Booths</span>
+              ← All Booths
             </Link>
           </div>
         </div>
@@ -58,147 +56,151 @@ export default function Header({ compact = false }) {
   }
 
   return (
-    <header className="relative bg-[#172D24] border-b border-[#244536] overflow-hidden">
-      {/* Decorative Pixel Grid Background Accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#264D3C]/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#FF5757]/10 rounded-full blur-3xl pointer-events-none" />
+    <header className="bg-[#36544e] text-[#f7f7f2] border-b-2 border-[#10201d] relative">
+      
+      {/* Top Navbar */}
+      <div className="border-b-2 border-[#10201d] bg-[#2e4742]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+          
+          {/* Left: Hacktoberfest 26 Text Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+            <span className="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase flex items-center">
+              HACKTOBERFEST
+              <span className="ml-1 text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-[#e97b77] text-[#10201d] border border-[#10201d]">
+                26
+              </span>
+            </span>
+          </Link>
 
-      {/* Top Partnership & Organization Banner */}
-      <div className="border-b border-[#224233] bg-[#12231C]/90 backdrop-blur-xs">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
-          {/* Left: MLH Logo */}
-          <div className="flex items-center gap-2">
-            <img
-              src="/images/mlh-logo.png"
-              alt="Major League Hacking (MLH)"
-              className="h-6 sm:h-7 object-contain drop-shadow-xs"
-            />
-          </div>
-
-          {/* Center: White Pill Badge with NST & ADYPU Logos */}
-          <div className="bg-white rounded-full px-3 sm:px-4 py-1.5 shadow-md flex items-center gap-2 sm:gap-3.5 border border-slate-200">
+          {/* Center: Institutional Logos (NST & ADYPU) */}
+          <div className="bg-[#f7f7f2] px-3 sm:px-4 py-1.5 rounded-md border-2 border-[#10201d] brutal-shadow-sm flex items-center gap-3">
             <img
               src="/images/nstLogo.png"
-              alt="Newton School of Technology Logo"
+              alt="Newton School of Technology"
               className="h-5 sm:h-6 object-contain"
             />
-            <span className="w-px h-4 sm:h-5 bg-slate-300"></span>
+            <span className="w-px h-5 bg-[#10201d]"></span>
             <img
               src="/images/adypuLogo.png"
-              alt="Ajeenkya DY Patil University Logo"
+              alt="Ajeenkya DY Patil University"
               className="h-4 sm:h-5 object-contain"
             />
           </div>
 
-          {/* Right: NSTSDC Logo */}
-          <div className="flex items-center gap-2">
+          {/* Right Action Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <img
               src="/images/nstsdc-logo.png"
-              alt="NST SDC Logo"
-              className="h-6 sm:h-7 object-contain drop-shadow-xs"
+              alt="NST SDC"
+              className="h-7 object-contain hidden sm:block"
             />
+            <a
+              href="#directory"
+              className="brutal-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs uppercase tracking-wider hidden xs:inline-block"
+            >
+              View Booths
+            </a>
           </div>
+
         </div>
       </div>
 
-      {/* Main Hacktoberfest Poster Style Hero */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-10 relative">
-        <div className="flex flex-col items-center text-center">
-          
-          {/* Mosaic "2026" Geometric Pixel Blocks */}
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 mb-3 bg-[#13241C]/80 px-4 py-1.5 rounded-lg border border-[#2B4E3E]">
-            <div className="flex gap-1">
-              <span className="w-3 h-3 bg-[#4D96FF] rounded-xs inline-block"></span>
-              <span className="w-3 h-3 bg-[#FF5757] rounded-xs inline-block"></span>
-              <span className="w-3 h-3 bg-[#F5B041] rounded-xs inline-block"></span>
-              <span className="w-3 h-3 bg-[#55EFC4] rounded-xs inline-block"></span>
-            </div>
-            <span className="font-mono text-base sm:text-lg font-extrabold tracking-widest text-[#F5B041]">
-              2 0 2 6
-            </span>
-            <div className="flex gap-1">
-              <span className="w-3 h-3 bg-[#F5B041] rounded-xs inline-block"></span>
-              <span className="w-3 h-3 bg-[#55EFC4] rounded-xs inline-block"></span>
-              <span className="w-3 h-3 bg-[#4D96FF] rounded-xs inline-block"></span>
-              <span className="w-3 h-3 bg-[#FF5757] rounded-xs inline-block"></span>
-            </div>
-          </div>
-
-          {/* Giant Retro Hacktoberfest Headline matching poster */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-[#FAF9F5] uppercase select-none drop-shadow-sm font-display leading-none">
-            HACKTOBERFEST
-          </h1>
-
-          {/* Track subtitles bar: OSS TALKS | OSS BOOTHS | 12-HR HACKATHON | PRIZES */}
-          <div className="mt-4 px-3 sm:px-6 py-2 rounded-full bg-[#1F3D30] border border-[#315A46] text-[#E4EDE7] font-mono text-[11px] sm:text-sm font-bold tracking-wider sm:tracking-widest flex items-center justify-center flex-wrap gap-2 shadow-xs">
-            <span>OSS TALKS</span>
-            <span className="text-[#FF5757]">•</span>
-            <span className="text-[#F5B041] font-extrabold">OSS BOOTHS</span>
-            <span className="text-[#FF5757]">•</span>
-            <span>12-HR HACKATHON</span>
-            <span className="text-[#FF5757]">•</span>
-            <span>PRIZES</span>
-          </div>
-
-          <p className="mt-5 text-sm sm:text-base text-[#B0C8BC] max-w-2xl leading-relaxed">
-            Welcome to the official Open Source Booth Directory for Hacktoberfest Hack Day 2026, hosted by <strong className="text-white">NSTSDC</strong> at <strong className="text-white">NST x ADYPU, Pune</strong>. Explore verified organizations, visit in-person booths, and start contributing.
-          </p>
+      {/* Main Hero Section: Styled after the official Hacktoberfest website */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-14 text-center">
+        
+        {/* Top Tagline */}
+        <div className="inline-block font-mono text-xs font-bold tracking-widest uppercase text-[#88baaf] mb-4">
+          OCTOBER 2026 • IN-PERSON OPEN SOURCE BOOTHS • PUNE
         </div>
 
-        {/* Lower Banner Info Cards (Pune Location + Booth Timings + Hackathon Schedule) */}
-        <div className="mt-9 grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
+        {/* Big Bold Headline with Coral Accent (Matches "500+ Fests. One is near you.") */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#f7f7f2] font-display tracking-tight leading-none mb-6">
+          7 Open Source Booths.{' '}
+          <span className="text-[#f18379] block sm:inline">Find your project.</span>
+        </h1>
+
+        <p className="max-w-2xl mx-auto text-sm sm:text-base text-[#cfdeda] leading-relaxed mb-8">
+          Welcome to the official booth directory for Hacktoberfest Hack Day 2026, organized by <strong className="text-white">NSTSDC</strong> at <strong className="text-white">NST x ADYPU</strong>. Discover participating projects, connect with mentors, and start contributing.
+        </p>
+
+        {/* Search Bar directly in Hero matching Hacktoberfest search design */}
+        <div className="max-w-2xl mx-auto mb-10">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('directory');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="flex flex-col sm:flex-row items-stretch brutal-shadow rounded-lg overflow-hidden"
+          >
+            <div className="relative flex-1 bg-white flex items-center border-2 sm:border-r-0 border-[#10201d]">
+              <Search className="w-5 h-5 text-slate-400 ml-4 shrink-0" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => onSearchChange && onSearchChange(e.target.value)}
+                placeholder="Search organizations (e.g. Kubernetes, Oppia, Docs)..."
+                aria-label="Search organizations"
+                className="w-full px-3.5 py-3.5 text-sm text-[#10201d] placeholder:text-slate-400 focus:outline-none font-sans"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-[#e97b77] hover:bg-[#f08985] text-[#10201d] font-mono font-bold text-sm px-6 py-3.5 border-2 border-[#10201d] transition-colors shrink-0 flex items-center justify-center gap-2 uppercase tracking-wider cursor-pointer"
+            >
+              <span>Explore Booths</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </form>
+        </div>
+
+        {/* Event Schedule & Location Badges */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
           
-          {/* Card 1: Venue / Pune */}
-          <div className="bg-[#1C362B] border border-[#2F5643] rounded-2xl p-4 flex items-start gap-3.5 shadow-sm">
-            <div className="w-10 h-10 rounded-xl bg-[#284C3D] text-[#FF7675] flex items-center justify-center shrink-0 border border-[#37614E]">
-              <MapPin className="w-5 h-5 text-[#FF7675]" />
+          {/* Badge 1: Venue */}
+          <div className="bg-[#2e4742] border-2 border-[#10201d] brutal-shadow-sm p-4 rounded-lg flex items-start gap-3">
+            <div className="w-8 h-8 rounded bg-[#3d5f58] border border-[#10201d] text-[#f18379] flex items-center justify-center shrink-0">
+              <MapPin className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="flex items-center gap-1.5 mb-1">
-                <span className="w-2 h-2 rounded-xs bg-[#4D96FF]"></span>
-                <span className="w-2 h-2 rounded-xs bg-[#FF5757]"></span>
-                <span className="w-2 h-2 rounded-xs bg-[#F5B041]"></span>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#FAF9F5]">PUNE</span>
-              </div>
-              <p className="text-[11px] font-semibold text-[#8DAEA0] leading-snug">
-                Newton School of Technology, Lohegaon, Pune, Maharashtra 412105, India
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#88baaf] block">
+                Venue Location
+              </span>
+              <p className="text-xs font-semibold text-white leading-snug mt-0.5">
+                Newton School of Technology, ADYPU Campus, Lohegaon, Pune
               </p>
             </div>
           </div>
 
-          {/* Card 2: Prominently Highlighted Booth Timings */}
-          <div className="bg-gradient-to-br from-[#244537] to-[#1C362B] border-2 border-[#F5B041] rounded-2xl p-4 flex items-start gap-3.5 shadow-md relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-[#F5B041] text-[#172D24] text-[9px] font-mono font-extrabold uppercase px-2 py-0.5 rounded-bl-lg">
-              Featured Activity
-            </div>
-            <div className="w-10 h-10 rounded-xl bg-[#F5B041]/15 text-[#F5B041] flex items-center justify-center shrink-0 border border-[#F5B041]/40">
-              <Clock className="w-5 h-5 text-[#F5B041]" />
+          {/* Badge 2: Booth Timings */}
+          <div className="bg-[#f2a900] text-[#10201d] border-2 border-[#10201d] brutal-shadow-sm p-4 rounded-lg flex items-start gap-3">
+            <div className="w-8 h-8 rounded bg-[#10201d] text-[#f2a900] flex items-center justify-center shrink-0 font-mono font-bold text-xs">
+              <Clock className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#F5B041] block mb-0.5">
-                OSS Booths Schedule
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#10201d] block">
+                Booth Timings
               </span>
-              <p className="text-sm font-extrabold text-white leading-tight">
+              <p className="text-sm font-extrabold text-[#10201d] leading-tight mt-0.5">
                 11:00 AM – 4:00 PM
               </p>
-              <p className="text-[11px] font-medium text-[#CFDEC6] mt-0.5">
+              <p className="text-[11px] font-medium text-[#10201d]">
                 Saturday, 24 October 2026
               </p>
             </div>
           </div>
 
-          {/* Card 3: Hackathon Dates & Overnight Details */}
-          <div className="bg-[#1C362B] border border-[#2F5643] rounded-2xl p-4 flex items-start gap-3.5 shadow-sm">
-            <div className="w-10 h-10 rounded-xl bg-[#284C3D] text-[#55EFC4] flex items-center justify-center shrink-0 border border-[#37614E]">
-              <Calendar className="w-5 h-5 text-[#55EFC4]" />
+          {/* Badge 3: Overnight Hackathon */}
+          <div className="bg-[#2e4742] border-2 border-[#10201d] brutal-shadow-sm p-4 rounded-lg flex items-start gap-3">
+            <div className="w-8 h-8 rounded bg-[#3d5f58] border border-[#10201d] text-[#55EFC4] flex items-center justify-center shrink-0">
+              <Calendar className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="flex items-center gap-1.5 mb-1">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#FAF9F5]">24-25 OCT</span>
-                <span className="text-[10px] text-[#7A988B]">• Saturday – Sunday</span>
-              </div>
-              <p className="text-[11px] font-semibold text-[#8DAEA0] leading-snug">
-                4:00 PM 24 Oct – 4:00 AM 25 Oct (12 Hours, Overnight Hackathon)
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#88baaf] block">
+                12-Hour Hackathon
+              </span>
+              <p className="text-xs font-semibold text-white leading-snug mt-0.5">
+                4:00 PM 24 Oct – 4:00 AM 25 Oct (Overnight)
               </p>
             </div>
           </div>
@@ -207,8 +209,8 @@ export default function Header({ compact = false }) {
 
       </div>
 
-      {/* Bottom Mosaic Bar */}
-      <div className="mosaic-bar">
+      {/* Signature Multi-Color Mosaic Bar at Bottom of Header */}
+      <div className="mosaic-bar border-t-2 border-[#10201d]">
         <span></span>
         <span></span>
         <span></span>
