@@ -6,20 +6,20 @@ export default function Footer() {
   return (
     <footer className="mt-16 border-t-2 border-[#10201d]">
       
-      {/* Top Banner Bar Styled after Hacktoberfest screenshot 2 */}
+      {/* Top Banner Bar */}
       <div className="bg-[#f7f7f2] border-b-2 border-[#10201d] py-4 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono font-bold text-[#10201d]">
           <div className="flex items-center gap-2">
-            <span className="font-extrabold uppercase">Hacktoberfest 2026:</span>
+            <span className="font-extrabold uppercase">Hack Day 2026:</span>
             <span className="text-[#e53927] font-extrabold">Open Source belongs to everyone.</span>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             <div className="flex items-center gap-2">
               <span className="text-[10px] text-slate-500 uppercase">POWERED BY</span>
-              <img src="/images/mlh-logo.png" alt="MLH" className="h-5 object-contain" />
+              <img src="/images/mlh.png" alt="MLH" className="h-6 object-contain" />
               <span>x</span>
-              <img src="/images/nstsdc-logo.png" alt="NSTSDC" className="h-5 object-contain" />
+              <img src="/images/devClub.png" alt="Developers Club" className="h-6 object-contain" />
             </div>
 
             <div className="hidden lg:block h-4 w-px bg-slate-300"></div>
@@ -45,14 +45,11 @@ export default function Footer() {
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-display text-2xl font-extrabold text-white uppercase">
-                  HACKTOBERFEST
-                  <span className="ml-1 text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-[#e97b77] text-[#10201d] border border-[#10201d]">
-                    26
-                  </span>
+                  OPEN SOURCE BOOTHS
                 </span>
               </div>
               <p className="text-xs text-[#cfdeda] leading-relaxed max-w-md">
-                Official Hack Day open-source booth directory for Newton School of Technology x Ajeenkya DY Patil University, Pune. Organized by NSTSDC in partnership with Major League Hacking (MLH).
+                Official Hack Day open-source booth directory for Newton School of Technology x Ajeenkya DY Patil University, Pune. Organized by Developers Club in partnership with Major League Hacking (MLH).
               </p>
               <div className="mt-4 font-mono text-xs text-[#f1c40f]">
                 ✦ Saturday, 24 October 2026 • Booths Active 11:00 AM – 4:00 PM
@@ -79,7 +76,7 @@ export default function Footer() {
                   <span className="text-[#88baaf]">▸ 12-Hour Overnight Hackathon</span>
                 </li>
                 <li>
-                  <span className="text-[#88baaf]">▸ DigitalOcean Track</span>
+                  <span className="text-[#88baaf]">▸ Contributor Swag</span>
                 </li>
               </ul>
             </div>
@@ -101,10 +98,10 @@ export default function Footer() {
           {/* Bottom Copyright */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#88baaf] font-mono">
             <p>
-              © 2026 Newton School of Technology Software Development Club (NSTSDC).
+              © 2026 Developers Club at NST x ADYPU.
             </p>
             <p>
-              Celebrating Open Source with MLH &amp; Hacktoberfest.
+              Celebrating Open Source with MLH &amp; Developers Club.
             </p>
           </div>
 
