@@ -1,0 +1,165 @@
+{
+  "orgs": [
+    {
+      "id": "1",
+      "name": "OpenMRS",
+      "logo": "/images/openmrs.svg",
+      "tagline": "Open-source electronic medical record platform empowering healthcare in resource-constrained environments.",
+      "what_it_is": "OpenMRS is an enterprise electronic medical records system designed to support clinics and hospitals worldwide.\nIt allows healthcare providers to track patient histories, manage clinical visits, and scale primary care delivery.",
+      "how_to_contribute": [
+        "Improve developer guides, Wiki setup steps, and module documentation",
+        "Assist with QA testing and report UI or workflow issues in reference apps",
+        "Resolve curated beginner-friendly frontend and backend bug fixes"
+      ],
+      "beginner_issues_url": "https://github.com/openmrs/openmrs-core/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://wiki.openmrs.org/display/docs/Getting+Started+as+a+Developer",
+      "community": {
+        "github": "https://github.com/openmrs",
+        "chat": "https://talk.openmrs.org",
+        "website": "https://openmrs.org"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    },
+    {
+      "id": "2",
+      "name": "Oppia",
+      "logo": "/images/oppia.svg",
+      "tagline": "Free, interactive learning platform making high-quality education accessible to every student.",
+      "what_it_is": "Oppia builds engaging interactive lessons that simulate personal tutoring through real-time feedback.\nIt bridges educational disparities by enabling learners around the world to master math, science, and foundational concepts.",
+      "how_to_contribute": [
+        "Translate interactive explorations and lesson audio into regional languages",
+        "Improve accessibility across Angular and TypeScript UI components",
+        "Write automated end-to-end user journey and lesson verification tests"
+      ],
+      "beginner_issues_url": "https://github.com/oppia/oppia/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://github.com/oppia/oppia/wiki/Contributing-code-to-Oppia",
+      "community": {
+        "github": "https://github.com/oppia",
+        "chat": "https://github.com/oppia/oppia/discussions",
+        "website": "https://www.oppia.org"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    },
+    {
+      "id": "3",
+      "name": "Sugar Labs",
+      "logo": "/images/sugarlabs.svg",
+      "tagline": "Exploratory learning tools and interactive software ecosystem designed for children.",
+      "what_it_is": "Sugar Labs develops the Sugar learning platform that encourages collaboration, discovery, and creative reflection.\nOriginally created for One Laptop per Child, it runs on computers and tablets to help students explore coding and media.",
+      "how_to_contribute": [
+        "Port Sugar Activities to modern Python 3 and GTK 3 libraries",
+        "Test educational activities on desktop distributions and report usability feedback",
+        "Write student tutorials and teacher classroom activity guides"
+      ],
+      "beginner_issues_url": "https://github.com/sugarlabs/sugar/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://wiki.sugarlabs.org/go/Getting_Started_with_Sugar",
+      "community": {
+        "github": "https://github.com/sugarlabs",
+        "chat": "https://matrix.to/#/#sugarlabs:matrix.org",
+        "website": "https://www.sugarlabs.org"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    },
+    {
+      "id": "4",
+      "name": "Kubernetes",
+      "logo": "/images/kubernetes.svg",
+      "tagline": "Industry-standard open-source system for automating deployment, scaling, and container management.",
+      "what_it_is": "Kubernetes is an open-source container orchestration engine that groups application containers into logical units.\nIt automates service discovery, load balancing, storage orchestration, and automated rollouts across cloud infrastructure.",
+      "how_to_contribute": [
+        "Review and translate documentation with the SIG Docs working group",
+        "Triage incoming bug reports and tackle good-first-issues across subprojects",
+        "Join Special Interest Groups (SIGs) on Slack to participate in developer discussions"
+      ],
+      "beginner_issues_url": "https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://www.kubernetes.dev/docs/guide/",
+      "community": {
+        "github": "https://github.com/kubernetes",
+        "chat": "https://slack.k8s.io",
+        "website": "https://kubernetes.io"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    },
+    {
+      "id": "5",
+      "name": "Meshery",
+      "logo": "/images/meshery.svg",
+      "tagline": "Cloud native management plane and collaborative design canvas for Kubernetes infrastructure.",
+      "what_it_is": "Meshery is an extensible open-source manager that allows operators to design, operate, and benchmark cloud-native systems.\nIt enables visual architecture topology design, multi-mesh operations, and conformance with industry best practices.",
+      "how_to_contribute": [
+        "Build and polish UI components in Meshery's React and Next.js frontend",
+        "Refine documentation, configuration patterns, and hands-on developer tutorials",
+        "Verify Meshery adapters and CLI commands across different local Kubernetes setups"
+      ],
+      "beginner_issues_url": "https://github.com/meshery/meshery/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://docs.meshery.io/project/contributing",
+      "community": {
+        "github": "https://github.com/meshery",
+        "chat": "https://slack.layer5.io",
+        "website": "https://meshery.io"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    },
+    {
+      "id": "6",
+      "name": "JSON Schema",
+      "logo": "/images/jsonschema.svg",
+      "tagline": "Declarative standard for annotating, validating, and structuring JSON documents and APIs.",
+      "what_it_is": "JSON Schema provides a clean, standardized vocabulary to validate data structures and prevent API bugs.\nIt powers API specifications, code generation, and automated documentation across modern software stacks.",
+      "how_to_contribute": [
+        "Write practical schema examples, quickstart guides, and documentation articles",
+        "Submit test cases and edge scenario assertions to the JSON Schema Test Suite",
+        "Audit validator benchmark summaries and improve beginner walkthroughs"
+      ],
+      "beginner_issues_url": "https://github.com/json-schema-org/json-schema-spec/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://json-schema.org/community/get-involved",
+      "community": {
+        "github": "https://github.com/json-schema-org",
+        "chat": "https://json-schema.org/slack",
+        "website": "https://json-schema.org"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    },
+    {
+      "id": "7",
+      "name": "FOSSASIA",
+      "logo": "/images/fossasia.svg",
+      "tagline": "Fostering open-source technology, software, and open hardware across Asia and the globe.",
+      "what_it_is": "FOSSASIA develops open technology solutions ranging from event management systems to pocket science instruments.\nIt brings together students, developers, and educators to create open tools that make an impact in communities.",
+      "how_to_contribute": [
+        "Develop web features and bug fixes for the Eventyay open-source event platform",
+        "Improve setup guides, API reference docs, and installation scripts",
+        "Translate user interfaces and documentation into regional languages"
+      ],
+      "beginner_issues_url": "https://github.com/fossasia/eventyay-tickets/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "contributing_guide_url": "https://fossasia.org/contribute/",
+      "community": {
+        "github": "https://github.com/fossasia",
+        "chat": "https://chat.fossasia.org",
+        "website": "https://fossasia.org"
+      },
+      "booth_location": {
+        "floor": "",
+        "landmark": ""
+      }
+    }
+  ]
+}
