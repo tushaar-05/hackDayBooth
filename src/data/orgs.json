@@ -48,29 +48,6 @@
     },
     {
       "id": "3",
-      "name": "Sugar Labs",
-      "logo": "/images/sugarlabs.png",
-      "tagline": "Exploratory learning tools and interactive software ecosystem designed for children.",
-      "what_it_is": "Sugar Labs develops the Sugar learning platform that encourages collaboration, discovery, and creative reflection.\nOriginally created for One Laptop per Child, it runs on computers and tablets to help students explore coding and media.",
-      "how_to_contribute": [
-        "Port Sugar Activities to modern Python 3 and GTK 3 libraries",
-        "Test educational activities on desktop distributions and report usability feedback",
-        "Write student tutorials and teacher classroom activity guides"
-      ],
-      "beginner_issues_url": "https://github.com/sugarlabs/sugar/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
-      "contributing_guide_url": "https://wiki.sugarlabs.org/go/Getting_Started_with_Sugar",
-      "community": {
-        "github": "https://github.com/sugarlabs",
-        "chat": "https://matrix.to/#/#sugarlabs:matrix.org",
-        "website": "https://www.sugarlabs.org"
-      },
-      "booth_location": {
-        "floor": "",
-        "landmark": ""
-      }
-    },
-    {
-      "id": "4",
       "name": "Kubernetes",
       "logo": "/images/kubernetes.png",
       "tagline": "Industry-standard open-source system for automating deployment, scaling, and container management.",
@@ -93,7 +70,7 @@
       }
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Meshery",
       "logo": "/images/meshery.png",
       "tagline": "Cloud native management plane and collaborative design canvas for Kubernetes infrastructure.",
@@ -116,7 +93,7 @@
       }
     },
     {
-      "id": "6",
+      "id": "5",
       "name": "JSON Schema",
       "logo": "/images/jsonschema.png",
       "tagline": "Declarative standard for annotating, validating, and structuring JSON documents and APIs.",
@@ -139,22 +116,22 @@
       }
     },
     {
-      "id": "7",
-      "name": "FOSSASIA",
-      "logo": "/images/fossasia.png",
-      "tagline": "Fostering open-source technology, software, and open hardware across Asia and the globe.",
-      "what_it_is": "FOSSASIA develops open technology solutions ranging from event management systems to pocket science instruments.\nIt brings together students, developers, and educators to create open tools that make an impact in communities.",
+      "id": "6",
+      "name": "Eventyay by FOSSASIA",
+      "logo": "/images/eventyay.png",
+      "tagline": "Open-source event management and ticketing platform powering tech conferences worldwide.",
+      "what_it_is": "Eventyay is an open-source event management platform developed by FOSSASIA.\nIt provides tools for ticketing, schedule management, call-for-speakers, and virtual events for global developer communities.",
       "how_to_contribute": [
-        "Develop web features and bug fixes for the Eventyay open-source event platform",
-        "Improve setup guides, API reference docs, and installation scripts",
-        "Translate user interfaces and documentation into regional languages"
+        "Develop web features and bug fixes across Eventyay frontend apps (React & Next.js)",
+        "Improve backend ticketing and event APIs in Python, Flask, and PostgreSQL",
+        "Refine developer setup guides, API reference docs, and localization"
       ],
       "beginner_issues_url": "https://github.com/fossasia/eventyay-tickets/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
       "contributing_guide_url": "https://fossasia.org/contribute/",
       "community": {
         "github": "https://github.com/fossasia",
         "chat": "https://chat.fossasia.org",
-        "website": "https://fossasia.org"
+        "website": "https://eventyay.com"
       },
       "booth_location": {
         "floor": "",
