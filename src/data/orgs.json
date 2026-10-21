@@ -9,10 +9,10 @@
       "how_to_contribute": [
         "Improve developer guides, Wiki setup steps, and module documentation",
         "Assist with QA testing and report UI or workflow issues in reference apps",
-        "Resolve curated beginner-friendly frontend and backend bug fixes"
+        "Pick up curated introductory issues from the OpenMRS JIRA tracker"
       ],
-      "beginner_issues_url": "https://github.com/openmrs/openmrs-core/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
-      "contributing_guide_url": "https://wiki.openmrs.org/display/docs/Getting+Started+as+a+Developer",
+      "beginner_issues_url": "https://openmrs.atlassian.net/wiki/display/docs/Contribute+as+a+Developer",
+      "contributing_guide_url": "https://openmrs.atlassian.net/wiki/spaces/docs/pages/25477022/Getting+Started+as+a+Developer",
       "community": {
         "github": "https://github.com/openmrs",
         "chat": "https://talk.openmrs.org",
@@ -122,11 +122,11 @@
       "tagline": "Open-source event management and ticketing platform powering tech conferences worldwide.",
       "what_it_is": "Eventyay is an open-source event management platform developed by FOSSASIA.\nIt provides tools for ticketing, schedule management, call-for-speakers, and virtual events for global developer communities.",
       "how_to_contribute": [
-        "Develop web features and bug fixes across Eventyay frontend apps (React & Next.js)",
-        "Improve backend ticketing and event APIs in Python, Flask, and PostgreSQL",
+        "Build web features and fix bugs across the Vue.js frontend",
+        "Improve ticketing, talk and video APIs in Python and Django with PostgreSQL",
         "Refine developer setup guides, API reference docs, and localization"
       ],
-      "beginner_issues_url": "https://github.com/fossasia/eventyay-tickets/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "beginner_issues_url": "https://github.com/fossasia/eventyay/issues",
       "contributing_guide_url": "https://fossasia.org/contribute/",
       "community": {
         "github": "https://github.com/fossasia",
