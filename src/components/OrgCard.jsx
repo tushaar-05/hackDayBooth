@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, MapPin } from 'lucide-react';
 
 export default function OrgCard({ org }) {
+  const navigate = useNavigate();
   const [imgError, setImgError] = useState(false);
 
   // Check if booth location details exist and are non-empty
@@ -20,11 +21,28 @@ export default function OrgCard({ org }) {
         .toUpperCase()
     : 'OS';
 
+  const savePosition = () => {
+    sessionStorage.setItem('scroll_pos_/', String(window.scrollY));
+    sessionStorage.setItem('last_viewed_org', String(org.id));
+  };
+
+  const handleCardClick = (e) => {
+    savePosition();
+    // If not clicking directly on an anchor (which handles navigation itself)
+    if (!e.target.closest('a')) {
+      navigate(`/org/${org.id}`);
+    }
+  };
+
   return (
-    <article className="brutal-card bg-white rounded-lg p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden group">
+    <article
+      id={`org-card-${org.id}`}
+      onClick={handleCardClick}
+      className="brutal-card bg-white rounded-lg p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden group cursor-pointer"
+    >
       <div>
         {/* Header: Official PNG Logo & Name */}
-        <div className="flex items-start gap-4 mb-4">
+        <div className="flex items-center gap-4 mb-4">
           <div className="w-14 h-14 rounded-lg bg-[#f7f7f2] border-2 border-[#10201d] p-2 shrink-0 flex items-center justify-center overflow-hidden brutal-shadow-sm group-hover:bg-white transition-colors">
             {org.logo && !imgError ? (
               <img
@@ -48,9 +66,6 @@ export default function OrgCard({ org }) {
             <h3 className="text-xl font-display font-extrabold text-[#10201d] group-hover:text-[#e53927] transition-colors truncate leading-tight">
               {org.name}
             </h3>
-            <span className="inline-block mt-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#3d5f58] bg-[#eef4f2] px-2 py-0.5 rounded border border-[#10201d]">
-              Open Source Booth
-            </span>
           </div>
         </div>
 
@@ -76,6 +91,7 @@ export default function OrgCard({ org }) {
         {/* Explore Project Button matching Hacktoberfest brutalist buttons */}
         <Link
           to={`/org/${org.id}`}
+          onClick={savePosition}
           className="brutal-btn inline-flex items-center justify-between w-full px-4 py-2.5 rounded text-xs uppercase tracking-wider"
           aria-label={`Explore ${org.name} project details`}
         >

@@ -7,7 +7,18 @@ import orgsData from '../data/orgs.json';
 
 export default function Home() {
   const { orgs = [] } = orgsData;
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(() => {
+    return sessionStorage.getItem('home_search_query') || '';
+  });
+
+  const handleSearchChange = (query) => {
+    setSearchQuery(query);
+    if (query) {
+      sessionStorage.setItem('home_search_query', query);
+    } else {
+      sessionStorage.removeItem('home_search_query');
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f2f2eb] text-[#10201d]">
@@ -15,7 +26,7 @@ export default function Home() {
       {/* Official Hacktoberfest Header with Search & Branding */}
       <Header
         searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
+        onSearchChange={handleSearchChange}
       />
 
 
@@ -25,7 +36,7 @@ export default function Home() {
         <OrgGrid
           orgs={orgs}
           externalQuery={searchQuery}
-          onQueryChange={setSearchQuery}
+          onQueryChange={handleSearchChange}
         />
       </main>
 

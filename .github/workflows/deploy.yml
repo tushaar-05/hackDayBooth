@@ -1,0 +1,47 @@
+name: Production Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Restart Deployment & Verify
+    runs-on: [self-hosted, linux, hackday-booth]
+    timeout-minutes: 10
+    steps:
+      - name: Trigger Rollout Restart
+        run: |
+          echo "Triggering rollout restart of deployment/hackday-booth in namespace nst-events..."
+          kubectl rollout restart deployment/hackday-booth -n nst-events
+
+      - name: Await Rollout Completion
+        run: |
+          echo "Waiting for rollout to complete..."
+          kubectl rollout status deployment/hackday-booth -n nst-events --timeout=300s
+
+      - name: Verify Public Website Health
+        run: |
+          echo "Verifying public website health at https://orgs.nstsdc.org..."
+          sleep 5
+
+          echo "1. Checking Homepage (https://orgs.nstsdc.org/)..."
+          HOME_CODE=$(curl -sSL -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" https://orgs.nstsdc.org/)
+          if [ "$HOME_CODE" != "200" ]; then
+            echo "Smoke test failed: Homepage returned HTTP $HOME_CODE"
+            exit 1
+          fi
+
+          echo "2. Checking SPA Deep Link (https://orgs.nstsdc.org/org/1)..."
+          DEEP_CODE=$(curl -sSL -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" https://orgs.nstsdc.org/org/1)
+          if [ "$DEEP_CODE" != "200" ]; then
+            echo "Smoke test failed: Deep link returned HTTP $DEEP_CODE"
+            exit 1
+          fi
+
+          echo "Deployment successfully rolled out and public website verified healthy!"

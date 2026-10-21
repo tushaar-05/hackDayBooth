@@ -8,7 +8,7 @@ Official mobile-first Open Source Booth Directory website for **Hack Day 2026**,
 - **Partners**: Major League Hacking (MLH), Newton School of Technology, Ajeenkya D Y Patil University
 - **Booth Timings**: 11:00 AM – 4:00 PM, Saturday, 24 October 2026
 - **Overnight Hackathon**: 4:00 PM 24 Oct – 4:00 AM 25 Oct (12 Hours)
-- **Venue**: Newton School of Technology, ADYPU Campus, Lohegaon, Pune, Maharashtra 412105, India
+- **Venue**: 4th Floor, Room 404, Newton School of Technology, ADYPU Campus, Lohegaon, Pune, Maharashtra 412105, India
 
 ## Tech Stack
 - **React 19** with **Vite**

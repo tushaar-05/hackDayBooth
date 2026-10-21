@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hackday-booth-runner
+  namespace: nst-events
+  labels:
+    app: hackday-booth-runner
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: hackday-booth-runner
+  template:
+    metadata:
+      labels:
+        app: hackday-booth-runner
+    spec:
+      serviceAccountName: github-actions-deployer
+      automountServiceAccountToken: true
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: NotIn
+                    values:
+                      - nst-n1
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 80
+              preference:
+                matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - nst-n6
+      initContainers:
+        - name: install-kubectl
+          image: bitnami/kubectl:1.31.3
+          command:
+            - /bin/sh
+            - -c
+            - cp /opt/bitnami/kubectl/bin/kubectl /custom-bin/kubectl && chmod +x /custom-bin/kubectl
+          volumeMounts:
+            - name: custom-bin
+              mountPath: /custom-bin
+      containers:
+        - name: runner
+          image: myoung34/github-runner:ubuntu-noble
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: REPO_URL
+              value: https://github.com/tushaar-05/hackDayBooth
+            - name: RUNNER_NAME
+              value: hackday-booth-runner
+            - name: LABELS
+              value: self-hosted,Linux,X64,hackday-booth
+            - name: RUNNER_LABELS
+              value: self-hosted,Linux,X64,hackday-booth
+            - name: RUNNER_WORKDIR
+              value: /tmp/runner/work
+            # Replaces existing registration on restart to prevent duplicate runner conflicts
+            - name: RUNNER_REPLACE_EXISTING
+              value: "true"
+            - name: PATH
+              value: /custom-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+          envFrom:
+            - secretRef:
+                name: hackday-runner-auth
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 1Gi
+          volumeMounts:
+            - name: custom-bin
+              mountPath: /custom-bin
+            - name: runner-work
+              mountPath: /tmp/runner/work
+      volumes:
+        - name: custom-bin
+          emptyDir: {}
+        - name: runner-work
+          emptyDir: {}

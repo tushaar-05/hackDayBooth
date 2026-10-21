@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import NotFound from './NotFound';
@@ -26,7 +26,17 @@ function GithubIcon({ className = "w-4 h-4" }) {
 
 export default function OrgDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [imgError, setImgError] = useState(false);
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
 
   // Find organization by id
   const org = orgsData.orgs?.find((item) => String(item.id) === String(id));
@@ -85,7 +95,8 @@ export default function OrgDetail() {
         <div className="mb-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#10201d] bg-white hover:bg-[#e97b77] transition-colors border-2 border-[#10201d] brutal-shadow-sm px-3 py-1.5 rounded"
+            onClick={handleBack}
+            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#10201d] bg-white hover:bg-[#e97b77] transition-colors border-2 border-[#10201d] brutal-shadow-sm px-3 py-1.5 rounded cursor-pointer"
             aria-label="Back to booth directory"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -400,7 +411,8 @@ export default function OrgDetail() {
         <div className="pt-4 pb-8 flex items-center justify-center border-t-2 border-[#10201d]/10 mt-2">
           <Link
             to="/"
-            className="w-full sm:w-auto brutal-btn inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded text-xs font-mono font-bold uppercase tracking-wider text-center"
+            onClick={handleBack}
+            className="w-full sm:w-auto brutal-btn inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded text-xs font-mono font-bold uppercase tracking-wider text-center cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Booths</span>

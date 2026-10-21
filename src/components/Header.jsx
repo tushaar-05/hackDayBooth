@@ -112,7 +112,7 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
 
         {/* Big Bold Headline */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#f7f7f2] font-display tracking-tight leading-none mb-5 sm:mb-6">
-          7 Open Source Booths.{' '}
+          6 Open Source Booths.{' '}
           <span className="text-[#f18379] block sm:inline">Find your project.</span>
         </h1>
 
@@ -126,7 +126,13 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
             onSubmit={(e) => {
               e.preventDefault();
               const el = document.getElementById('directory');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              if (el) {
+                if (window.__lenis) {
+                  window.__lenis.scrollTo(el, { duration: 1.2, offset: -20 });
+                } else {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
             }}
             className="flex flex-col sm:flex-row items-stretch brutal-shadow rounded-lg overflow-hidden"
           >
@@ -164,7 +170,7 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
                 Venue Location
               </span>
               <p className="text-xs font-semibold text-white leading-snug mt-0.5">
-                Newton School of Technology, ADYPU Campus, Lohegaon, Pune
+                4th Floor, Room 404, Newton School of Technology, ADYPU Campus, Pune
               </p>
             </div>
           </div>

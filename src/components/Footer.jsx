@@ -14,26 +14,13 @@ export default function Footer() {
             <span className="text-[#e53927] font-extrabold">Open Source belongs to everyone.</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <div className="flex items-center gap-2.5">
-              <span className="text-[10px] text-slate-500 uppercase">POWERED BY</span>
-              <img src="/images/mlh.png" alt="MLH" className="h-6 sm:h-7 object-contain" />
-              <span className="text-slate-400 font-bold">x</span>
-              <div className="bg-[#10201d] px-2.5 py-1 rounded-md border-2 border-[#10201d] brutal-shadow-sm flex items-center gap-1.5">
-                <img src="/images/devClub.png" alt="Developers Club" className="h-5 sm:h-6 object-contain" />
-                <span className="text-white text-xs font-mono font-bold tracking-tight">DevClub</span>
-              </div>
-            </div>
-
-            <div className="hidden lg:block h-4 w-px bg-slate-300"></div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] text-slate-500 uppercase">HOST INSTITUTIONS</span>
-              <div className="bg-white px-2 py-0.5 rounded border border-[#10201d] flex items-center gap-2">
-                <img src="/images/nstLogo.png" alt="NST" className="h-4 object-contain" />
-                <span className="w-px h-3 bg-slate-300"></span>
-                <img src="/images/adypuLogo.png" alt="ADYPU" className="h-3 object-contain" />
-              </div>
+          <div className="flex items-center gap-2.5">
+            <span className="text-[10px] text-slate-500 uppercase">POWERED BY</span>
+            <img src="/images/mlh.png" alt="MLH" className="h-6 sm:h-7 object-contain" />
+            <span className="text-slate-400 font-bold">x</span>
+            <div className="bg-[#10201d] px-2.5 py-1 rounded-md border-2 border-[#10201d] brutal-shadow-sm flex items-center gap-1.5">
+              <img src="/images/devClub.png" alt="Developers Club" className="h-5 sm:h-6 object-contain" />
+              <span className="text-white text-xs font-mono font-bold tracking-tight">DevClub</span>
             </div>
           </div>
         </div>
@@ -65,7 +52,8 @@ export default function Footer() {
                 Venue &amp; Location
               </h4>
               <div className="text-xs text-[#cfdeda] space-y-1 leading-relaxed">
-                <p className="font-semibold text-white">Newton School of Technology</p>
+                <p className="font-semibold text-white">4th Floor, Room 404</p>
+                <p>Newton School of Technology</p>
                 <p>Ajeenkya DY Patil University Campus</p>
                 <p>Lohegaon, Pune, Maharashtra 412105</p>
                 <p className="text-[#88baaf]">India</p>
