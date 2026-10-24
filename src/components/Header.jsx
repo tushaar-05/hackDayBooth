@@ -112,7 +112,7 @@ export default function Header({ compact = false, onSearchChange, searchQuery = 
 
         {/* Big Bold Headline */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#f7f7f2] font-display tracking-tight leading-none mb-5 sm:mb-6">
-          6 Open Source Booths.{' '}
+          5 Open Source Booths.{' '}
           <span className="text-[#f18379] block sm:inline">Find your project.</span>
         </h1>
 
