@@ -71,29 +71,6 @@
     },
     {
       "id": "4",
-      "name": "Meshery",
-      "logo": "/images/meshery.png",
-      "tagline": "Cloud native management plane and collaborative design canvas for Kubernetes infrastructure.",
-      "what_it_is": "Meshery is an extensible open-source manager that allows operators to design, operate, and benchmark cloud-native systems.\nIt enables visual architecture topology design, multi-mesh operations, and conformance with industry best practices.",
-      "how_to_contribute": [
-        "Build and polish UI components in Meshery's React and Next.js frontend",
-        "Refine documentation, configuration patterns, and hands-on developer tutorials",
-        "Verify Meshery adapters and CLI commands across different local Kubernetes setups"
-      ],
-      "beginner_issues_url": "https://github.com/meshery/meshery/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
-      "contributing_guide_url": "https://docs.meshery.io/project/contributing",
-      "community": {
-        "github": "https://github.com/meshery",
-        "chat": "https://slack.layer5.io",
-        "website": "https://meshery.io"
-      },
-      "booth_location": {
-        "floor": "",
-        "landmark": ""
-      }
-    },
-    {
-      "id": "5",
       "name": "JSON Schema",
       "logo": "/images/jsonschema.png",
       "tagline": "Declarative standard for annotating, validating, and structuring JSON documents and APIs.",
@@ -116,7 +93,7 @@
       }
     },
     {
-      "id": "6",
+      "id": "5",
       "name": "Eventyay by FOSSASIA",
       "logo": "/images/eventyay.png",
       "tagline": "Open-source event management and ticketing platform powering tech conferences worldwide.",

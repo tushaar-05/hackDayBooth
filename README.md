@@ -21,9 +21,8 @@ Official mobile-first Open Source Booth Directory website for **Hack Day 2026**,
 1. **OpenMRS**
 2. **Oppia**
 3. **Kubernetes**
-4. **Meshery**
-5. **JSON Schema**
-6. **Eventyay by FOSSASIA**
+4. **JSON Schema**
+5. **Eventyay by FOSSASIA**
 
 ## Running Locally
 ```bash
